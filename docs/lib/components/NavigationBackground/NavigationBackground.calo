@@ -1,15 +1,6 @@
-asigno window.TopBar como un componente vue2 con nombre "TopBar" con plantilla {
-  <div class="TopBar Component">
-    <xlayouthorizontal>
-      <xlayouthorizontalitem>
-        <div class="navigation-button" v-on:click="toggle_navigation">
-          <img class="navigation-icon" src="lib/icons/navigation-white.png" />
-        </div>
-      </xlayouthorizontalitem>
-      <xlayouthorizontalitem style="width:100%; vertical-align: middle; text-align: center;">
-        Título actual de la página
-      </xlayouthorizontalitem>
-    </xlayouthorizontal>
+asigno window.NavigationBackground como un componente vue2 con nombre "NavigationBackground" con plantilla {
+  <div class="NavigationBackground Component" v-on:click="hide_navigation">
+    
   </div>
 } con lógica {
   retorno {
@@ -18,11 +9,11 @@ asigno window.TopBar como un componente vue2 con nombre "TopBar" con plantilla {
       retorno {}.
     }.
     propiedad methods como {
-      método toggle_navigation donde {
+      método hide_navigation donde {
         creo toggled_elements como document.querySelectorAll(".NavigationBar,.NavigationBackground").
         desde 0 hasta toggled_elements.length {
           creo toggled_element como toggled_elements[index].
-          hago toggled_element.classList.toggle("active").
+          hago toggled_element.classList.remove("active").
         }.
       }.
     }.

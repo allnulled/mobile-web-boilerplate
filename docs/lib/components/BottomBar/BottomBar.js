@@ -2,7 +2,7 @@
 window.BottomBar = Castelog.metodos.un_componente_vue2("BottomBar",
   "<div class=\"BottomBar Component\">"
  + "    <xlayouthorizontal class=\"bottom-bar-buttons\">"
- + "      <xlayouthorizontalitem class=\"bottom-bar-button\">"
+ + "      <xlayouthorizontalitem class=\"bottom-bar-button\" style=\"border-left: none;\">"
  + "        <img class=\"bottom-bar-icon\" src=\"lib/icons/calendar-white.png\" />"
  + "      </xlayouthorizontalitem>"
  + "      <xlayouthorizontalitem class=\"bottom-bar-button\">"

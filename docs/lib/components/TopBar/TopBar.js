@@ -24,7 +24,9 @@ throw error;
 
 },
 methods:{ toggle_navigation() {try {
-document.querySelector( ".NavigationBar" ).classList.toggle( "active" );
+const toggled_elements = document.querySelectorAll( ".NavigationBar,.NavigationBackground" );
+for(let index = 0; index < toggled_elements.length; index++) {const toggled_element = toggled_elements[ index ];
+toggled_element.classList.toggle( "active" );}
 } catch(error) {
 console.log(error);
 throw error;

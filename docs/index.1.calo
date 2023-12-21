@@ -16,6 +16,7 @@ Ejecutable como documento HTML5
     <script src="lib/components/TopBarSpace/TopBarSpace.js"></script>
     <script src="lib/components/BottomBar/BottomBar.js"></script>
     <script src="lib/components/NavigationBar/NavigationBar.js"></script>
+    <script src="lib/components/NavigationBackground/NavigationBackground.js"></script>
     <style>
       * {
         font-family: Arial;
@@ -66,6 +67,7 @@ asigno window.App como una aplicación vue2 con nombre "App" con rutas [{
     propiedad ca como {}.
 } con plantilla {
   <div class="App Component Castelog-app win7">
+    <NavigationBackground />
     <TopBar />
     <TopBarSpace />
     <NavigationBar />
