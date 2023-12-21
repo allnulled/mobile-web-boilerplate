@@ -1,6 +1,14 @@
 asigno window.NavigationBar como un componente vue2 con nombre "NavigationBar" con plantilla {
   <div class="NavigationBar Component">
-    NavigationBar
+    <div v-on:click="() => ir_a('/')">
+      <xbutton class="navigation-button">Inicio</xbutton>
+    </div>
+    <div v-on:click="() => ir_a('/calendar')">
+      <xbutton class="navigation-button">Calendario</xbutton>
+    </div>
+    <div v-on:click="() => ir_a('/taks')">
+      <xbutton class="navigation-button">Tareas</xbutton>
+    </div>
   </div>
 } con lógica {
   retorno {
@@ -8,7 +16,19 @@ asigno window.NavigationBar como un componente vue2 con nombre "NavigationBar" c
     método data donde {
       retorno {}.
     }.
-    propiedad methods como {}.
+    propiedad methods como {
+      método ir_a con (link) donde {
+        hago this.hide_navigation().
+        hago this.$router.history.push(link).
+      }.
+      método hide_navigation donde {
+        creo toggled_elements como document.querySelectorAll(".NavigationBar,.NavigationBackground").
+        desde 0 hasta toggled_elements.length {
+          creo toggled_element como toggled_elements[index].
+          hago toggled_element.classList.remove("active").
+        }.
+      }.
+    }.
     propiedad watch como {}.
     propiedad computed como {}.
     método beforeCreate donde {}.

@@ -7,7 +7,7 @@ asigno window.TopBar como un componente vue2 con nombre "TopBar" con plantilla {
         </div>
       </xlayouthorizontalitem>
       <xlayouthorizontalitem style="width:100%; vertical-align: middle; text-align: center;">
-        Título actual de la página
+        {{ title }}
       </xlayouthorizontalitem>
     </xlayouthorizontal>
   </div>
@@ -15,7 +15,9 @@ asigno window.TopBar como un componente vue2 con nombre "TopBar" con plantilla {
   retorno {
     propiedad props como {}.
     método data donde {
-      retorno {}.
+      retorno {
+        title: "Título de página actual"
+      }.
     }.
     propiedad methods como {
       método toggle_navigation donde {
@@ -25,13 +27,18 @@ asigno window.TopBar como un componente vue2 con nombre "TopBar" con plantilla {
           hago toggled_element.classList.toggle("active").
         }.
       }.
+      método set_title con (title) donde {
+        asigno this.title como title.
+      }.
     }.
     propiedad watch como {}.
     propiedad computed como {}.
     método beforeCreate donde {}.
     método created donde {}.
     método beforeMount donde {}.
-    método mounted donde {}.
+    método mounted donde {
+      asigno Vue.prototype.$TopBar como this.
+    }.
     método beforeUpdate donde {}.
     método updated donde {}.
     método beforeUnmount donde {}.

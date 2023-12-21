@@ -12,6 +12,7 @@
     
 }
 .BottomBar > .bottom-bar-buttons > .bottom-bar-button {
+    display: table-cell;
     width: 33%;
     height: $theme_fixed_bars_height;
     border-left: 1px solid white;

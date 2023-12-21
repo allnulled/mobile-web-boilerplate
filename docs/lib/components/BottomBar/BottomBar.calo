@@ -1,15 +1,15 @@
 asigno window.BottomBar como un componente vue2 con nombre "BottomBar" con plantilla {
   <div class="BottomBar Component">
     <xlayouthorizontal class="bottom-bar-buttons">
-      <xlayouthorizontalitem class="bottom-bar-button" style="border-left: none;">
+      <div class="bottom-bar-button" style="border-left: none;" v-on:click="() => ir_a('/calendar')">
         <img class="bottom-bar-icon" src="lib/icons/calendar-white.png" />
-      </xlayouthorizontalitem>
-      <xlayouthorizontalitem class="bottom-bar-button">
+      </div>
+      <div class="bottom-bar-button" v-on:click="() => ir_a('/')">
         <img class="bottom-bar-icon" src="lib/icons/home-white.png" />
-      </xlayouthorizontalitem>
-      <xlayouthorizontalitem class="bottom-bar-button">
+      </div>
+      <div class="bottom-bar-button" v-on:click="() => ir_a('/tasks')">
         <img class="bottom-bar-icon" src="lib/icons/list-white.png" />
-      </xlayouthorizontalitem>
+      </div>
     </xlayouthorizontal>
   </div>
 } con lógica {
@@ -18,7 +18,11 @@ asigno window.BottomBar como un componente vue2 con nombre "BottomBar" con plant
     método data donde {
       retorno {}.
     }.
-    propiedad methods como {}.
+    propiedad methods como {
+      método ir_a con (link) donde {
+        hago this.$router.history.push(link).
+      }.
+    }.
     propiedad watch como {}.
     propiedad computed como {}.
     método beforeCreate donde {}.
